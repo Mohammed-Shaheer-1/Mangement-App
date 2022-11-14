@@ -1,0 +1,79 @@
+<section>
+    <div id="container" class="shadow">
+  
+      <!-- Cover Box -->
+      <div id="cover">
+  
+        <!-- Sign Up Section -->
+        <h1 class="sign-up">Hello, Friend!</h1>
+        <p class="sign-up">
+          Enter your personal details<br />
+          and start a journey with us
+        </p>
+        <a class="button sign-up" href="#cover">Sign Up</a>
+  
+  
+        <!-- Sign In Section -->
+        <h1 class="sign-in">Welcome Back!</h1>
+        <p class="sign-in">
+          To keep connected with us please<br />
+          login with your personal info
+        </p>
+        <br />
+        <a class="button sub sign-in" href="#">Sign In</a>
+      </div>
+  
+  
+      <!-- Login Box -->
+      <div id="login" class="">
+        <h1>Sign In</h1>
+        <a href="#"><i class="logicon bi bi-google"></i></a>
+        <a href="#"><i class="logicon bi bi-facebook"></i></a>
+        <a href="#"><i class="logicon bi bi-twitter"></i></a>
+        <p>or use your email account:</p>
+        <form [formGroup]="loginForm">
+          <input type="email" placeholder="Email" formControlName="email" autocomplete="off" /><br />
+          <input
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+            autocomplete="off"
+          /><br />
+          <a id="forgot-pass" href="#">Forgot your password?</a><br />
+          <input
+            class="submit-btn"
+            type="submit"
+            value="Sign In"
+            (click)="Login()"
+          />
+        </form>
+      </div>
+  
+  
+      <!-- Register Box -->
+      <div id="register">
+        <h1>Create Account</h1>
+        <a href="#"><i class="regicon bi bi-google"></i></a>
+        <a href="#"><i class="regicon bi bi-facebook"></i></a>
+        <a href="#"><i class="regicon bi bi-twitter"></i></a>
+        <p>or use your email for registration:</p>
+        <form [formGroup]="registerForm" >
+          <input type="text" placeholder="Name" formControlName="name" autocomplete="off" /><br />
+          <input type="email" placeholder="Email" formControlName="email" autocomplete="off" /><br />
+          <input
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+            autocomplete="off"
+          /><br />
+  
+          <input
+            class="submit-btn"
+            type="submit"
+            value="Sign Up"
+            (click)="register()"
+          />
+        </form>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,72 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <a  class="navbar-brand">Employee mangement App</a>
+    </div>
+  </nav>
+<div class="main">
+<section class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Employee Management</h2>
+        </div>
+        <div class="col ml-auto text-right">
+            <button type="button" class="btn btn-success" (click)="Onaddemployee()">Add Employee</button>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row" *ngIf="delete">
+        <div class="col-md-4" *ngFor="let emp of employees">
+            <div class="card">
+                <div class="card-body" >
+                    <h5>{{emp.name}}</h5>
+                    <h6>{{emp.position}}</h6>
+                    
+                    <span class="bg-info p-1 rounded">{{emp.dept}}</span>
+                    <hr>
+                    <button class="btn btn-primary me-2" (click)="oneditEmployee(emp)">Edit</button>
+                    <button class="btn btn-danger" (click)="ondeleatemployee(emp._id)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<div class="modal fade show" [class.show]="showModal" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Add Employee</h5>
+                <button (click)="onClosemodal()" class="close" type="button" data-dismiss="modal" aria-label="Close"><span 
+                    aria-hidden="true">&times;</span></button>
+            </div>
+   
+                <div class="modal-body">
+                    <div>
+                        <label for="">Enter name</label>
+                        <input type="text" class="form-control"   [(ngModel)]="name">
+                        <!-- <small *ngIf="!empForm.get('name').valid && empForm.get('name').touched" class="form-text btn-danger">Please Enter Name</small> -->
+                    </div>
+                    <div>
+                        <label for="">Enter position</label>
+                        <input type="text" class="form-control"  [(ngModel)]="position" >
+                        <small></small>
+                    </div>
+                    <div>
+                        <label for="">Enter department</label>
+                        <input type="text" class="form-control" [(ngModel)]="department" >
+                        <small></small>
+                    </div>
+                    <div>
+                        <button type="button" (click)="onClosemodal()" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" (click)="onEmpSubmit()"  class="btn btn-primary" data-dismiss="modal">{{editMode? 'Update Employee':'Add Employee'}}</button>
+                    </div>
+                </div>
+           
+        </div>
+    </div>
+
+</div>
+</div>
